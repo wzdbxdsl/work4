@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            font-weight: 900;
+            text-align: center;
+            line-height: 40px;                                                          
+        } 
+        * {
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        .wrap {
+            margin: 0 auto;
+
+            width: 750px;
+
+            height: 650px;
+
+            background-color: #eeeeee;
+
+            text-align: center;
+
+            padding-top: 53px;
+
+            box-sizing: border-box;
+
+        }
+        h1 {
+            margin-bottom: 50px;
+
+            color: #aaaaaa;
+
+            font-size: 50px;
+        }
+        .a1 {
+            margin: 15px 0 25px 0;
+
+        }
+
+        .a1 {
+            font-size: 26px;
+
+        }
+
+        .a1 span {
+            font-size: 35px;
+
+            color: #0000ff;
+
+        }                                                                                                                                              
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>倒计时</h1>
+        <p class="a1">
+
+            现在还剩:
+            </p>
+    <div>
+        <span class="day">0</span><p></p>
+    </div>
+    <div>
+        <span class="hour">1</span><strong>:</strong>
+        <span class="minute">2</span><strong>:</strong>
+        <span class="second">3</span>
+    </div>
+</div>
+</body>
+<script>
+    var day=document.querySelector(".day");
+    var hour=document.querySelector(".hour");
+    var minute=document.querySelector(".minute");
+    var second=document.querySelector(".second");
+    var inputTime=+new Date("2022-12-22 00:00:00");
+    countDown();
+    setInterval(countDown,1000);
+    function countDown(){
+        var nowTime=+new Date();
+        var times=(inputTime - nowTime)/1000;
+        var d=parseInt(times/60/60/24);
+        day.innerHTML=d<10?"0"+d:d;
+        var h=parseInt(times/60/60%24);
+        hour.innerHTML=h<10?"0"+h:h;
+        var m=parseInt(times/60%60);
+        minute.innerHTML=m<10?"0"+m:m;
+        var s=parseInt(times%60);
+        second.innerHTML=s<10?"0"+s:s;
+    }
+    </script>
+</html>

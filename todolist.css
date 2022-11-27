@@ -1,0 +1,25 @@
+body{
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.header{
+    background-color: rgb(49, 50, 50);
+    background-size: contain;
+    height: 137px;
+    width: 500px;
+    border-radius: 15px 50px 30px;
+    
+   
+    color:rgb(247, 245, 245);
+}
+.header h2{text-align: center;}
+.title{
+    height: 35px;
+    width: 80%;
+    margin-left: 20px;
+    margin-right: 10px;
+
+}
+
